@@ -8,10 +8,10 @@
 import Foundation
 
 struct User {
-    private var products = [String]()
+    private var products = Set<String>()
     
     mutating func buy(_ product: String) {
-        products.append(product)
+        products.insert(product)
     }
     
     func owns(_ product: String) -> Bool {
