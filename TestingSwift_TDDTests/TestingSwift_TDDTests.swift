@@ -9,6 +9,18 @@ import XCTest
 @testable import TestingSwift_TDD
 
 class TestingSwift_TDDTests: XCTestCase {
+    
+    func testReadingBookAddsToLibrary() {
+        // given
+        let bookToBuy = "Great Expectations"
+        var user = User()
+        
+        // when
+        user.buy(bookToBuy)
+        
+        // then
+        XCTAssertTrue(user.owns(bookToBuy))
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
